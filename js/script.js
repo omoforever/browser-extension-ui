@@ -76,6 +76,28 @@ var extensions = [
 var filter_state = "all";
 var filtered_list = extensions;
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+
+    // Optional: Change icon
+    const icon = document.getElementById('theme-icon');
+    const dark = document.body.classList.contains('dark-mode');
+    icon.src = dark ? './assets/images/icon-sun.svg' : './assets/images/icon-moon.svg';
+
+
+    // Optional: Save preference
+    localStorage.setItem('darkMode', dark ? 'enabled' : 'disabled');
+}
+
+// On load, restore user preference
+window.addEventListener('DOMContentLoaded', () => {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('theme-icon').src = 'assets/images/icon-sun.svg';
+    }
+});
+
 
 function setFilterState(state) {
     filter_state = state;

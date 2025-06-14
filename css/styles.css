@@ -285,3 +285,43 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/**Dark Mode**/
+
+body.dark-mode {
+    background-color: var(--neutral-900);
+    color: var(--neutral-100);
+}
+
+body.dark-mode header {
+    background-color: var(--neutral-800);
+}
+
+body.dark-mode .theme-button {
+    background-color: var(--neutral-700);
+    border-color: var(--neutral-700);
+}
+
+body.dark-mode .theme-button:hover {
+    border-color: var(--red-700);
+}
+
+body.dark-mode .filter-bar button {
+    background-color: var(--neutral-700);
+    border-color: var(--neutral-600);
+    color: var(--neutral-100);
+}
+
+body.dark-mode .filter-bar-buttons button.active {
+    background-color: var(--red-400);
+    color: var(--neutral-0);
+}
+
+body.dark-mode .extension-item {
+    background-color: var(--neutral-800);
+    color: var(--neutral-100);
+}
+
+body.dark-mode .remove-extension-button {
+    border-color: var(--neutral-600);
+}
