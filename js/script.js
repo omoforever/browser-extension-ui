@@ -86,7 +86,10 @@ var gridItems = extensions.map(extension => `
     </div>
     <div class="extension-item-buttons">
       <button class="remove-extension-button">Remove</button>
-      <button class="toggle-state-button">Toggle</button>
+      <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
     </div>
   </div>
 `).join('');
