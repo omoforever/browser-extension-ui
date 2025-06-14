@@ -149,14 +149,17 @@ button {
 .extensions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 3rem;
+    align-items: stretch;
 }
 
 
 .extension-item {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: flex-start;
+    height: 100%;
     padding: 1rem;
     border-radius: 1rem;
     background-color: var(--neutral-0);
@@ -174,6 +177,7 @@ button {
 
 .extension-item-info p {
     font-size: smaller;
+    word-wrap: break-word;
 }
 
 .extension-item-info h5,
@@ -185,11 +189,13 @@ button {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    margin-top: auto;
 }
 
 .extension-item-buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: auto;
 }
 
 .remove-extension-button {
