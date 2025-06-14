@@ -146,6 +146,11 @@ button {
     border-color: var(--red-700);
 }
 
+.filter-bar-buttons button.active {
+    background-color: var(--red-700);
+    color: var(--neutral-100);
+}
+
 .extensions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

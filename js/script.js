@@ -73,27 +73,51 @@ var extensions = [
     }
 ]
 
-var gridContainer = document.getElementById("extensions-grid");
+var filter_state = "all";
+var filtered_list = extensions;
 
-var gridItems = extensions.map(extension => `
-  <div class="extension-item">
-    <div class="extension-item-row">
-      <img src="${extension.logo}" alt="">
-      <div class="extension-item-info">
-        <h5>${extension.name}</h5>
-        <p>${extension.description}</p>
+
+function setFilterState(state) {
+    filter_state = state;
+
+    if (filter_state === "active") {
+        filtered_list = extensions.filter(extension => extension.isActive === true);
+    } else if (filter_state === "inactive") {
+        filtered_list = extensions.filter(extension => extension.isActive !== true);
+    } else {
+        filtered_list = extensions;
+    }
+
+    document.querySelectorAll('.filter-bar-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`filter-${filter_state}`).classList.add('active');
+    renderExtensions();
+}
+function renderExtensions() {
+    var gridContainer = document.getElementById("extensions-grid");
+
+    var gridItems = filtered_list.map(extension => `
+    <div class="extension-item">
+      <div class="extension-item-row">
+        <img src="${extension.logo}" alt="">
+        <div class="extension-item-info">
+          <h5>${extension.name}</h5>
+          <p>${extension.description}</p>
+        </div>
+      </div>
+      <div class="extension-item-buttons">
+        <button class="remove-extension-button">Remove</button>
+        <label class="switch">
+          <input type="checkbox" ${extension.isActive ? 'checked' : ''}>
+          <span class="slider round"></span>
+        </label>
       </div>
     </div>
-    <div class="extension-item-buttons">
-      <button class="remove-extension-button">Remove</button>
-      <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
-    </div>
-  </div>
-`).join('');
+  `).join('');
 
-gridContainer.innerHTML = gridItems;
+    gridContainer.innerHTML = gridItems;
+}
 
-// console.log(gridContainer)
+document.getElementById(`filter-${filter_state}`).classList.add('active');
+renderExtensions();
