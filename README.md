@@ -7,7 +7,6 @@ This project is a responsive UI for managing browser extensions. It includes fea
 - Rendered the extension data dynamically from the provided `data.json` file.
 - Implemented toggling of extensions between active and inactive states.
 - Added filtering functionality to display active or inactive extensions based on user selection.
-- Enabled removal of extensions from the list.
 - Created a color theme selector to switch between available themes.
 - Ensured the UI matches the provided design for both mobile and desktop screens.
 - Added hover, focus, and active states for interactive elements for better accessibility and UX.
