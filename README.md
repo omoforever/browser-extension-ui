@@ -1,6 +1,6 @@
 # Browser Extensions Manager UI
 
-This project is a responsive UI for managing browser extensions. It includes features such as toggling extensions on and off, filtering by active status, removing extensions, and switching color themes.
+This project is a responsive UI for managing browser extensions. It includes features such as filtering by active status and switching color themes.
 
 ## What I built
 
